@@ -5068,7 +5068,7 @@
 				this.compressed = (this.compressed == undefined) ? !!ECKey.compressByDefault : this.compressed;
 			};
 
-			ECKey.privateKeyPrefix = 0x4e; // mainnet 0x4e    testnet ?
+			ECKey.privateKeyPrefix = 0x78; // mainnet 0x78    testnet ?
 
 			/**
 			* Whether public keys should be returned compressed by default.
@@ -5255,7 +5255,7 @@
 			// 51 characters base58, always starts with a 'Y'
 			ECKey.isWalletImportFormat = function (key) {
 				key = key.toString();
-				return (ECKey.privateKeyPrefix == 0x4e) ?
+				return (ECKey.privateKeyPrefix == 0x78) ?
 							(/^Y[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key)) :
 							(/^9[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{50}$/.test(key));
 			};
@@ -5263,7 +5263,7 @@
 			// 52 characters base58
 			ECKey.isCompressedWalletImportFormat = function (key) {
 				key = key.toString();
-				return (ECKey.privateKeyPrefix == 0x4e) ?
+				return (ECKey.privateKeyPrefix == 0x78) ?
 							(/^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key)) :
 							(/^c[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$/.test(key));
 			};
